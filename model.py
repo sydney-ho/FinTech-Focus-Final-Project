@@ -2,9 +2,9 @@ import requests
 
 def getData(query):
     response = requests.get(f'https://www.styvio.com/api/sentiment/{query}').json()
-    bullish = response['stockTwitsPercentBullish']
-    bearish = response['stockTwitsPercentBearish']
-    neutral = response['stockTwitsPercentNeutral']
+    bullish = round(response['stockTwitsPercentBullish'],2)
+    bearish = round(response['stockTwitsPercentBearish'],2)
+    neutral = round(response['stockTwitsPercentNeutral'],2)
     sentiment = [bullish, bearish, neutral]
     return sentiment
 
