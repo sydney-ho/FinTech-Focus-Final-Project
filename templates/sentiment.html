@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Your Personalized Gif</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="static/css/style.css?q={{ time }}" />
+    </head>
+    <body>
+        <h1>Your Stock</h1>
+        <h3>{{name}}</h3>
+        <p>Bullish: {{sentiment[0]}}</p> <br>
+        <div class="container">
+            <div class="row my-3">
+                <div class="col">
+                    <h4>Bootstrap 4 Chart.js</h4>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-4 py-1">
+                    <div class="card">
+                        <div class="card-body">
+                            <canvas id="chDonut1"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-1">
+                    <div class="card">
+                        <div class="card-body">
+                            <canvas id="chDonut2"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-1">
+                    <div class="card">
+                        <div class="card-body">
+                            <canvas id="chDonut3"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>Bearish: {{sentiment[1]}}</p> <br>
+        <p>Neutral: {{sentiment[2]}}</p> <br>
+
+    </body>
+</html>
