@@ -2,7 +2,7 @@
 # -- Import section --
 from flask import Flask, render_template, request
 from datetime import datetime
-from model import getData, getName
+from model import getStockTwitsData, getRedditStockData, getRedditMarketData, getName, getLogo
 import os
 
 # -- Initialization section --
@@ -19,5 +19,9 @@ def index():
 def yoursentiment():
     userStockChoice = request.form['stockchoice']
     stock_name = getName(userStockChoice)
-    stock_sentiment = getData(userStockChoice)
-    return render_template('sentiment.html', time = datetime.now(), sentiment = stock_sentiment, name = stock_name)
+    stock_twits_sentiment = getStockTwitsData(userStockChoice)
+    reddit_stock_sentiment = getRedditStockData(userStockChoice)
+    reddit_market_sentiment = getRedditMarketData(userStockChoice)
+    stock_logo = getLogo(userStockChoice)
+    return render_template('sentiment.html', time = datetime.now(), stock_twits = stock_twits_sentiment, reddit_stock = reddit_stock_sentiment,
+    reddit_market = reddit_market_sentiment, name = stock_name, logo = stock_logo)

@@ -1,6 +1,6 @@
 import requests
 
-def getData(query):
+def getStockTwitsData(query):
     response = requests.get(f'https://www.styvio.com/api/sentiment/{query}').json()
     bullish = round(response['stockTwitsPercentBullish'],2)
     bearish = round(response['stockTwitsPercentBearish'],2)
@@ -8,6 +8,26 @@ def getData(query):
     sentiment = [bullish, bearish, neutral]
     return sentiment
 
+def getRedditStockData(query):
+    response = requests.get(f'https://www.styvio.com/api/sentiment/{query}').json()
+    bullish = round(response['redditStocksPercentBullish'],2)
+    bearish = round(response['redditStocksPercentBearish'],2)
+    neutral = round(response['redditStocksPercentNeutral'],2)
+    sentiment = [bullish, bearish, neutral]
+    return sentiment
+
+def getRedditMarketData(query):
+    response = requests.get(f'https://www.styvio.com/api/sentiment/{query}').json()
+    bullish = round(response['redditStockMarketPercentBullish'],2)
+    bearish = round(response['redditStockMarketPercentBearish'],2)
+    neutral = round(response['redditStockMarketPercentNeutral'],2)
+    sentiment = [bullish, bearish, neutral]
+    return sentiment
+
 def getName(query):
     response = requests.get(f'https://www.styvio.com/api/sentiment/{query}').json()
     return response['name']
+
+def getLogo(query):
+    response = requests.get(f'https://www.styvio.com/api/sentiment/{query}').json()
+    return response['logoURL']
