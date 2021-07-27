@@ -16,7 +16,10 @@ html {
 }
 
 .colors {
-  background-color: darkgrey;
+  background-color: #404754;
+  padding: 10% 20% 30% 20%;
+  font-family: 'Courier Prime';
+  color: #F8FAFD;
 }
 
 main
@@ -36,6 +39,7 @@ head {
   font-family: 'Oswald', sans-serif;
   
 }
+
 .background {
   background-color: #21252B;
 }
@@ -68,7 +72,6 @@ nav
   /* text-align: center; */
   background-image: url = "stock.jpg";
   background-color: #21252B;
-  /* background-image: linear-gradient(#21252B, white) */
   padding-bottom: 30px;
 
 }
@@ -157,4 +160,37 @@ nav li a:hover
 
 .textcolorita {
   color: white;
+    padding: 10% 20% 30% 20%;
+}
+
+form.bar input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.bar button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.bar button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.bar::after {
+  content: "";
+  clear: both;
+  display: table;
 }
