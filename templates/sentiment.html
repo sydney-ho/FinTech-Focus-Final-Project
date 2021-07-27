@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Your Personalized Gif</title>
+    <title>Sentiment</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="static/css/style.css?q={{ time }}">
@@ -24,19 +24,20 @@
             var options = {
                 title: 'StockTwits',
                 titleTextStyle: {
-                    color: 'white',    
-                    fontName: 'Sans-Serif', 
-                    fontSize: 16, 
+                    color: 'white',
+                    fontName: 'Sans-Serif',
+                    fontSize: 16,
                 },
                 pieHole: 0.4,
                 height: 500,
                 colors: ['#BFFCC6', '#FFF5BA', '#FFABAB'],
-                backgroundColor: '#21252B',
+                backgroundColor: '#404754',
                 legend: {
-                    textStyle: {color: '#ABB2BF', fontName: 'Sans-Serif'},
-                    position:'center',
-                    alignment:'center'
+                    textStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
+                    position: 'center',
+                    alignment: 'center'
                 },
+
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('stocktwitschart'));
@@ -61,18 +62,18 @@
             var options = {
                 title: 'r/stock',
                 titleTextStyle: {
-                    color: 'white',    
-                    fontName: 'Sans-Serif', 
-                    fontSize: 16, 
+                    color: 'white',
+                    fontName: 'Sans-Serif',
+                    fontSize: 16,
                 },
                 pieHole: 0.4,
                 height: 500,
                 colors: ['#BFFCC6', '#FFF5BA', '#FFABAB'],
-                backgroundColor: '#21252B',
+                backgroundColor: '#404754',
                 legend: {
-                    textStyle: {color: '#ABB2BF', fontName: 'Sans-Serif'},
-                    position:'center',
-                    alignment:'center'
+                    textStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
+                    position: 'center',
+                    alignment: 'center'
                 },
             };
 
@@ -100,19 +101,51 @@
             var options = {
                 title: 'r/stockmarket',
                 titleTextStyle: {
-                    color: 'white',    
-                    fontName: 'Sans-Serif', 
-                    fontSize: 16, 
+                    color: 'white',
+                    fontName: 'Sans-Serif',
+                    fontSize: 16,
                 },
                 pieHole: 0.4,
                 height: 500,
                 colors: ['#BFFCC6', '#FFF5BA', '#FFABAB'],
-                backgroundColor: '#21252B',
+                backgroundColor: '#404754',
                 legend: {
-                    textStyle: {color: '#ABB2BF', fontName: 'Sans-Serif'},
-                    position:'center',
-                    alignment:'center'
+                    textStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
+                    position: 'center',
+                    alignment: 'center'
                 },
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('redditmarketchart'));
+            chart.draw(data, options);
+        }
+    </script>
+    <script type="text/javascript">
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        var totalbullish = parseFloat('{{total[0]}}');
+        var totalbearish = parseFloat('{{total[1]}}');
+        var totalneutral = parseFloat('{{100-total[0]-total[1]}}');
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Genre'],
+                ['', 60, 40, '']
+            ]);
+            var options = {
+                width: 600,
+                height: 400,
+                legend: { position: 'top', maxLines: 3 },
+                bar: { groupWidth: '75%' },
+                isStacked: true
+            };
+            var options_fullStacked = {
+                isStacked: 'percent',
+                height: 300,
+                legend: { position: 'top', maxLines: 3 },
+                hAxis: {
+                    minValue: 0,
+                    ticks: [0, .3, .6, .9, 1]
+                }
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('redditmarketchart'));
@@ -122,20 +155,38 @@
 </head>
 
 <body>
-    <h2 style="text-align: center;"><img src="{{logo}}" alt="logo">{{name}}</h2>
+    <h1 style="text-align: center;">{{name}}</h1>
     <div class="container">
         <div class="row">
             <div class="col">
-                <div id="stocktwitschart" style="width: 400px; height: 400px;"></div>
+                <div id="stocktwitschart" style="width: 400px; height: 300px;"></div>
             </div>
             <div class="col">
-                <div id="redditstockchart" style="width: 400px; height: 400px;"></div>
+                <div id="redditstockchart" style="width: 400px; height: 300px;"></div>
             </div>
             <div class="col">
-                <div id="redditmarketchart" style="width: 400px; height: 400px;"></div>
+                <div id="redditmarketchart" style="width: 400px; height: 300px;"></div>
             </div>
         </div>
     </div>
+
+    <section class="pt-5">
+        <div class="container pt-5">
+            <div class="card border-0 rounded shadow-sm">
+                <div class="card-body p-5" style="background-color: #404754;">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h1 class="fw-bold">Overall: {{total[2]}}</h1>
+                            <h2 style="color: whitesmoke">Bullish: {{total[0]}} </h2>
+                            <h2 style="color: whitesmoke">Bearish: {{total[1]}} </h2>
+                        </div>
+                        <div class="col-lg-6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
 
 </html>

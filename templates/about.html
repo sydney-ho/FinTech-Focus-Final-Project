@@ -2,77 +2,89 @@
 <html lang="en">
 
 <head class="yolo">
-	<link href="static/css/style.css" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	 crossorigin="anonymous">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
-</style>
+    <link href="static/css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+    </style>
 </head>
 
 <body>
+    <nav>
+        <br>
+        <div class="container navheader">
+            <div class="row">
+                <div class="col">
+                    <div class="dropdown" class="picture">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" img="stocks.jpg"
+                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"> <a
+                                href="index.html"> <img src="static/images/stocks.jpg" height="70" width="75" /></a>
 
-<body>
-	<nav>
-		<br>
-  <div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="dropdown" class ="picture">
-  <button class="btn btn-secondary dropdown-toggle" type="button" img = "stocks.jpg" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"> <a href ="index.html"> <img src="stocks.jpg" height="70" width ="75"/></a>
-    
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="{{url_for('index')}}">Home</a></li>
-    <li><a class="dropdown-item" href="{{url_for('get_about')}}">About</a></li>
-    <li><a class="dropdown-item" href="{{url_for('get_contact')}}"> Contact Us </a></li>
-  </ul>
-</div>
-    </div>
-    <div class="col">
-      <h1> Financial  </h1>
-    </div>
-    <div class="col">
-      <h1> Sentiment </h1>
-    </div>
-    <div class="col">
-     <h1> Calculator </h1>
-    </div>
-    <div class="col">
-      
-    </div>
-    <div class="col">
-      
-    </div>
-    
-    <div class="col">
-      
-    </div>
-  </div>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="{{url_for('index')}}">Home</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('get_about')}}">About</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('get_contact')}}"> Contact Us </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <h1> Financial </h1>
+                </div>
+                <div class="col">
+                    <h1> Sentiment </h1>
+                </div>
+                <div class="col">
+                    <h1> Analyzer </h1>
+                </div>
+                <div class="col">
 
-</div>
+                </div>
+                <div class="col">
 
+                </div>
 
-  </nav>
-<main class="colors">
-<h1> What is Financial Sentiment? </h1>
-<section>
-The most common use of The Sentiment Analysis API in the financial sector will be the analysis of financial news, in particular to predicting the behaviour and possible trend of stock markets.
-<br> <br>
-Traditional Technical Analysis of the Financial Market with the use of tools the like of Stockastics and Bollinger bands aside, sentiment analytics has been receiving a lot of attention as it allows the integration of both Fundamental Analysis (FA) and Technical Analysis (TA).
-<br> <br>
-In real life, Financial Market Analysts make predictions on the stock market based on opinions and happenings in the news. Similarly, Sentiment Analysis API is making it possible for computers to do the same job now. Further more, with advance computational linguistic and machine learning techniques, the task of opinion mining proves to be more efficient than human analysts, having the capability to scan through huge chunk of text across various news channels within seconds.
-<br><br>
-A simple example of the real application of Sentiment Analysis API for the financial sector can be explained by the task of assigning positive, negative or neutral sentiment values to the words. For instance, words such as “good“, “benefit“, “positive“, and “growth” are all tagged with positive scores while words such as “risk“, “fall“, “bankruptcy“, and “loss” are tagged with negative scores.
-<br><br>
-</section>
-<footer>
-credit: twinword financial sentiment analysis
+                <div class="col">
+
+                </div>
+            </div>
+
+        </div>
 
 
-  </main>
+    </nav>
+    <main class="colors">
+        <h1> What is Financial Sentiment? </h1>
+        <section>
+            The most common use of The Sentiment Analysis API in the financial sector will be the analysis of
+            financial news, in particular to predicting the behaviour and possible trend of stock markets.
+            <br> <br>
+            Traditional Technical Analysis of the Financial Market with the use of tools the like of Stockastics and
+            Bollinger bands aside, sentiment analytics has been receiving a lot of attention as it allows the
+            integration of both Fundamental Analysis (FA) and Technical Analysis (TA).
+            <br> <br>
+            In real life, Financial Market Analysts make predictions on the stock market based on opinions and
+            happenings in the news. Similarly, Sentiment Analysis API is making it possible for computers to do the
+            same job now. Further more, with advance computational linguistic and machine learning techniques, the
+            task of opinion mining proves to be more efficient than human analysts, having the capability to scan
+            through huge chunk of text across various news channels within seconds.
+            <br><br>
+            A simple example of the real application of Sentiment Analysis API for the financial sector can be
+            explained by the task of assigning positive, negative or neutral sentiment values to the words. For
+            instance, words such as “good“, “benefit“, “positive“, and “growth” are all tagged with positive scores
+            while words such as “risk“, “fall“, “bankruptcy“, and “loss” are tagged with negative scores.
+            <br><br>
+        </section>
+        <footer>
+            credit: twinword financial sentiment analysis
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

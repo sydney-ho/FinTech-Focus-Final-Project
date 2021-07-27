@@ -17,7 +17,7 @@ html {
 
 .colors {
   background-color: #404754;
-  padding: 10% 20% 30% 20%;
+  padding: 5% 15% 30% 15%;
   font-family: 'Courier Prime';
   color: #F8FAFD;
 }
@@ -129,13 +129,19 @@ nav li a:hover
 
 
 		} */
+
 /* .container
 {
-		width:648px;
+	width:648px;
 
-		margin:0 auto;
+	margin:0 auto;
 
 } */
+
+.navheader {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
 
 .bottom
 {
@@ -193,4 +199,34 @@ form.bar::after {
   content: "";
   clear: both;
   display: table;
+}
+
+:root {
+    --color-primary: #2bc4bd;
+    --color-primary-offWhite: #ebeded;
+}
+
+
+.BarChart {
+    background-color: var(--color-primary);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+        // inherit will take in the height of its parent, you could also 
+        // use 100% if the parent's height is set.
+    width: 4em;
+    overflow:hidden;
+}
+
+.BarData {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.PercentText {
+    color: var(--color-primary-offWhite);
+    font:700 1.25rem sans-serif;
+    text-align: center; 
 }

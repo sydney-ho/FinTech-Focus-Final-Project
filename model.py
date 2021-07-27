@@ -24,6 +24,14 @@ def getRedditMarketData(query):
     sentiment = [bullish, bearish, neutral]
     return sentiment
 
+def getTotalData(query):
+    response = requests.get(f'https://www.styvio.com/api/sentiment/{query}').json()
+    bullish = round(response['redditStockMarketPercentBullish'],2)
+    bearish = round(response['redditStockMarketPercentBearish'],2)
+    total = response['totalSentiment']
+    sentiment = [bullish, bearish, total]
+    return sentiment
+
 def getName(query):
     response = requests.get(f'https://www.styvio.com/api/sentiment/{query}').json()
     return response['name']
@@ -31,3 +39,6 @@ def getName(query):
 def getLogo(query):
     response = requests.get(f'https://www.styvio.com/api/sentiment/{query}').json()
     return response['logoURL']
+
+def getDate(query):
+    response = requests.get(f'')
