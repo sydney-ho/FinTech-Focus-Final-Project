@@ -1,6 +1,7 @@
 # ---- YOUR APP STARTS HERE ----
 # -- Import section --
 from flask import Flask, render_template, request
+from flask_bootstrap import Bootstrap
 from datetime import datetime
 from model import getStockTwitsData, getRedditStockData, getRedditMarketData, getName, getLogo
 import os
@@ -8,12 +9,19 @@ import os
 # -- Initialization section --
 app = Flask(__name__)
 
-
 # -- Routes section --
 @app.route('/')
 @app.route('/index')
 def index():
     return render_template("index.html", time = datetime.now())
+
+@app.route('/about')
+def get_about():
+    return render_template('about.html',title="About")
+
+@app.route('/contact')
+def get_contact():
+    return render_template('contact.html', title="Contact Us")
 
 @app.route('/yoursentiment', methods=['GET','POST'])
 def yoursentiment():

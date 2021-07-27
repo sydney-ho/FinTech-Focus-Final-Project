@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head class="yolo">
-	<link href="style.css" rel="stylesheet">
+	<link href="static/css/style.css" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	 crossorigin="anonymous">
 <style>
@@ -10,6 +10,8 @@
 </style>
 </head>
 
+<body>
+	
 <body>
 	<nav>
 		<br>
@@ -28,13 +30,13 @@
 </div>
     </div>
     <div class="col">
-      <h1> Financial  </h1>
+      <h1> Financial </h1>
     </div>
     <div class="col">
       <h1> Sentiment </h1>
     </div>
     <div class="col">
-     <h1> Calculator </h1>
+      <h1> Calculator </h1>
     </div>
     <div class="col">
       
@@ -55,15 +57,25 @@
 
 
   </nav>
-  
-<main class = "textcolorita">
-Insert the name of the stock you would like to learn more about!
-<form method="post" action="/yoursentiment" class = "bar">
-            <input type="text" id -"inputPassword5" class ="form-control" name="stockchoice" aria-describedby="passwordHelpBlock" placeholder="Stock Name"/>
-            <br>
-            <input class ="submit1" type="submit" value="Submit"/>
-        </form>
-<br>
+<main class = "colors">
+  <h4>
+    Have a question? Use the form below to contact us and we'll get back to you as soon as possible!
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Question</label>
+    <input type="email" class="form-control" id="exampleInputEmail1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 <br>
   </main>
 
