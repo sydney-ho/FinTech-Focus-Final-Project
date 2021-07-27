@@ -1,7 +1,6 @@
 # ---- YOUR APP STARTS HERE ----
 # -- Import section --
 from flask import Flask, render_template, request
-from flask_bootstrap import Bootstrap
 from datetime import datetime
 from model import getStockTwitsData, getRedditStockData, getRedditMarketData, getName, getLogo
 import os
