@@ -6,127 +6,169 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="static/css/style.css?q={{ time }}">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <div class = "round-edge">
-   <script type="text/javascript">
-        google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawChart);
-        var bullish = parseFloat('{{stock_twits[0]}}');
-        var bearish = parseFloat('{{stock_twits[1]}}');
-        var neutral = parseFloat('{{stock_twits[2]}}');
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Sentiment', 'Value'],
-                ['Bullish', bullish],
-                ['Bearish', bearish],
-                ['Neutral', neutral],
+    <div class="round-edge">
+        <script type="text/javascript">
+            google.charts.load("current", { packages: ["corechart"] });
+            google.charts.setOnLoadCallback(drawChart);
+            var bullish = parseFloat('{{stock_twits[0]}}');
+            var bearish = parseFloat('{{stock_twits[1]}}');
+            var neutral = parseFloat('{{stock_twits[2]}}');
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Sentiment', 'Value'],
+                    ['Bullish', bullish],
+                    ['Bearish', bearish],
+                    ['Neutral', neutral],
 
-            ]);
+                ]);
 
-            var options = {
-                title: 'StockTwits',
-                titleTextStyle: {
-                    color: 'white',
-                    fontName: 'Sans-Serif',
-                    fontSize: 16,
-                },
-                pieHole: 0.4,
-                height: 500,
-                colors: ['#BFFCC6', '#FFF5BA', '#FFABAB'],
-                backgroundColor: '#404754',
-                legend: {
-                    textStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
-                    position: 'center',
-                    alignment: 'center'
-                },
+                var options = {
+                    title: 'StockTwits',
+                    titleTextStyle: {
+                        color: 'white',
+                        fontName: 'Sans-Serif',
+                        fontSize: 16,
+                    },
+                    pieHole: 0.4,
+                    height: 500,
+                    colors: ['#BFFCC6', '#FFF5BA', '#FFABAB'],
+                    backgroundColor: '#404754',
+                    legend: {
+                        textStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
+                        position: 'center',
+                        alignment: 'center'
+                    },
 
-            };
+                };
 
-            var chart = new google.visualization.PieChart(document.getElementById('stocktwitschart'));
-            chart.draw(data, options);
-        }
-    </script>
+                var chart = new google.visualization.PieChart(document.getElementById('stocktwitschart'));
+                chart.draw(data, options);
+            }
+        </script>
     </div>
-     <div class = "round-edge">
+    <div class="round-edge">
 
-    <script type="text/javascript">
-        google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawChart);
-        var rsbullish = parseFloat('{{reddit_stock[0]}}');
-        var rsbearish = parseFloat('{{reddit_stock[1]}}');
-        var rsneutral = parseFloat('{{reddit_stock[2]}}');
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Sentiment', 'Value'],
-                ['Bullish', rsbullish],
-                ['Bearish', rsbearish],
-                ['Neutral', rsneutral],
+        <script type="text/javascript">
+            google.charts.load("current", { packages: ["corechart"] });
+            google.charts.setOnLoadCallback(drawChart);
+            var rsbullish = parseFloat('{{reddit_stock[0]}}');
+            var rsbearish = parseFloat('{{reddit_stock[1]}}');
+            var rsneutral = parseFloat('{{reddit_stock[2]}}');
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Sentiment', 'Value'],
+                    ['Bullish', rsbullish],
+                    ['Bearish', rsbearish],
+                    ['Neutral', rsneutral],
 
-            ]);
+                ]);
 
-            var options = {
-                title: 'r/stock',
-                titleTextStyle: {
-                    color: 'white',
-                    fontName: 'Sans-Serif',
-                    fontSize: 16,
-                },
-                pieHole: 0.4,
-                height: 500,
-                colors: ['#BFFCC6', '#FFF5BA', '#FFABAB'],
-                backgroundColor: '#404754',
-                legend: {
-                    textStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
-                    position: 'center',
-                    alignment: 'center'
-                },
-            };
+                var options = {
+                    title: 'r/stock',
+                    titleTextStyle: {
+                        color: 'white',
+                        fontName: 'Sans-Serif',
+                        fontSize: 16,
+                    },
+                    pieHole: 0.4,
+                    height: 500,
+                    colors: ['#BFFCC6', '#FFF5BA', '#FFABAB'],
+                    backgroundColor: '#404754',
+                    legend: {
+                        textStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
+                        position: 'center',
+                        alignment: 'center'
+                    },
+                };
 
 
 
-            var chart = new google.visualization.PieChart(document.getElementById('redditstockchart'));
-            chart.draw(data, options);
-        }
-    </script>
+                var chart = new google.visualization.PieChart(document.getElementById('redditstockchart'));
+                chart.draw(data, options);
+            }
+        </script>
     </div>
-     <div class = "round-edge">
-    <script type="text/javascript">
-        google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawChart);
-        var rmbullish = parseFloat('{{reddit_market[0]}}');
-        var rmbearish = parseFloat('{{reddit_market[1]}}');
-        var rmneutral = parseFloat('{{reddit_market[2]}}');
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Sentiment', 'Value'],
-                ['Bullish', rmbullish],
-                ['Bearish', rmbearish],
-                ['Neutral', rmneutral],
+    <div class="round-edge">
+        <script type="text/javascript">
+            google.charts.load("current", { packages: ["corechart"] });
+            google.charts.setOnLoadCallback(drawChart);
+            var rmbullish = parseFloat('{{reddit_market[0]}}');
+            var rmbearish = parseFloat('{{reddit_market[1]}}');
+            var rmneutral = parseFloat('{{reddit_market[2]}}');
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Sentiment', 'Value'],
+                    ['Bullish', rmbullish],
+                    ['Bearish', rmbearish],
+                    ['Neutral', rmneutral],
 
-            ]);
+                ]);
 
-            var options = {
-                title: 'r/stockmarket',
-                titleTextStyle: {
-                    color: 'white',
-                    fontName: 'Sans-Serif',
-                    fontSize: 16,
-                },
-     
-                pieHole: 0.4,
-                height: 500,
-                colors: ['#BFFCC6', '#FFF5BA', '#FFABAB'],
-                backgroundColor: '#404754',
-                legend: {
-                    textStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
-                    position: 'center',
-                    alignment: 'center'
-                },
-            };
+                var options = {
+                    title: 'r/stockmarket',
+                    titleTextStyle: {
+                        color: 'white',
+                        fontName: 'Sans-Serif',
+                        fontSize: 16,
+                    },
 
-            var chart = new google.visualization.PieChart(document.getElementById('redditmarketchart'));
-            chart.draw(data, options);
-        }
-    </script>
+                    pieHole: 0.4,
+                    height: 500,
+                    colors: ['#BFFCC6', '#FFF5BA', '#FFABAB'],
+                    backgroundColor: '#404754',
+                    legend: {
+                        textStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
+                        position: 'center',
+                        alignment: 'center'
+                    },
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('redditmarketchart'));
+                chart.draw(data, options);
+            }
+        </script>
+        <script type="text/javascript">
+            google.charts.load('current', { 'packages': ['bar'] });
+            google.charts.setOnLoadCallback(drawChart);
+            var totalbu = parseFloat('{{total[0]}}');
+            var totalbe = parseFloat('{{total[1]}}');
+            var totaln = parseFloat('{{100-total[0]-total[1]}}');
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    [' ', 'Bullish', 'Neutral', 'Bearish'],
+                    [' ', totalbu, totaln, totalbe,],
+                ]);
+                var options_fullStacked = {
+                    bars: 'horizontal',
+                    chartArea: {
+                        backgroundColor: '#404754'
+                    },
+                    backgroundColor: '#404754',
+                    isStacked: true,
+                    // isStacked: 'percent',
+                    // isStacked: 'relative',
+                    // isStacked: 'absolute',
+                    'height': 100,
+                    bar: { groupWidth: "95%" },
+
+                    legend: {
+                        position: ' top', maxLines: 3, textStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
+                        position: 'center',
+                        alignment: 'center'
+                    },
+                    hAxis: {
+                        titletextStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
+                        minValue: 0,
+                        ticks: [0, .3, .6, .9, 1],
+                        color: '#ABB2BF'
+                    },
+                    colors: ['gray']
+                };
+                var chart1 = new google.charts.Bar(document.getElementById('barchart_material'));
+
+                chart1.draw(data, google.charts.Bar.convertOptions(options_fullStacked));
+            }
+        </script>
     </div>
 </head>
 
@@ -145,8 +187,41 @@
     </div>
 </div>
 
+
+
 <body>
-    <h1 style="text-align: center;">{{name}}</h1>
+    <div class="sentiment-title">
+        <h1 style="text-align: center;">{{name}}</h1>
+    </div>
+    <div class="container container--overall">
+        <div class="overall-box-format">
+            <div class="row">
+
+                <div class="col">
+                    <div class="overall-section-text">Overall: {{total[2]}}</div>
+
+                    <div class="overall-section-text">Bullish: {{total[0]}}</div>
+
+                    <div class="overall-section-text">Bearish: {{total[1]}}</div>
+                </div>
+                <div class="col">
+
+                    <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+                </div>
+            </div>
+            <div class = "row"> 
+                
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="divider"> </div>
+    <div class="divider"> </div>
+
+
     <div class="container container-height">
         <div class="row">
             <div class="col">
@@ -160,69 +235,7 @@
             </div>
         </div>
     </div>
-    <div class="divider"> </div>
 
-    <div class="container container--overall">
-        <div class="overall-box-format">
-            <div class="row">
-        
-                <div class="col">
-                    <div class = "overall-section-text">Overall: {{total[2]}}</div>
-
-                    <div class = "overall-section-text">Bullish: {{total[0]}}</div>
-
-                    <div class = "overall-section-text">Bearish: {{total[1]}}</div>
-                </div>
-                <div class="col">
-                    <script type="text/javascript">
-                        google.charts.load('current', { 'packages': ['bar'] });
-                        google.charts.setOnLoadCallback(drawChart);
-                        var totalbu = parseFloat('{{total[0]}}');
-                        var totalbe = parseFloat('{{total[1]}}');
-                        var totaln = parseFloat('{{100-total[0]-total[1]}}');
-                        function drawChart() {
-                            var data = google.visualization.arrayToDataTable([
-                                [' ', 'Bullish', 'Neutral', 'Bearish'],
-                                [' ', totalbu, totaln, totalbe, ],
-                            ]);
-                            var options_fullStacked = {
-                                bars: 'horizontal',
-                                chartArea: {
-                                    backgroundColor: '#404754'
-                                },
-                                backgroundColor: '#404754',
-                                isStacked: true,
-                                // isStacked: 'percent',
-                                // isStacked: 'relative',
-                                // isStacked: 'absolute',
-                                'height': 100,
-                                bar: { groupWidth: "95%" },
-
-                                legend: {
-                                    position: ' top', maxLines: 3, textStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
-                                    position: 'center',
-                                    alignment: 'center'
-                                },
-                                hAxis: {
-                                    titletextStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
-                                    minValue: 0,
-                                    ticks: [0, .3, .6, .9, 1],
-                                    color: '#ABB2BF'
-                                },
-                                colors: ['gray']
-                            };
-                            var chart1 = new google.charts.Bar(document.getElementById('barchart_material'));
-
-                            chart1.draw(data, google.charts.Bar.convertOptions(options_fullStacked));
-                        }
-                    </script>
-                    <div id="barchart_material" style="width: 900px; height: 500px;"></div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
 
 </body>
 
