@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Courier Prime', sans-serif;
     display: flex;
     flex-direction: column;
 }
@@ -35,6 +35,10 @@ nav .animation {
   transition: all .5s ease 0s;
   border-radius: 8px;
 }
+
+a {
+    color: white !important;
+}
 a:nth-child(1) {
   width: 200px;
 }
@@ -48,17 +52,20 @@ a:nth-child(3) {
 nav .start-home, a:nth-child(1):hover~.animation {
   width: 200px;
   left: 0;
-  background-color: #1abc9c;
+  background-color: #808080;
+  color: #dadada;
 }
 nav .start-about, a:nth-child(2):hover~.animation {
   width: 200px;
   left: 200px;
-  background-color: #e74c3c;
+  background-color: #808080;
+  color: #dadada;
 }
 nav .start-contact, a:nth-child(3):hover~.animation {
   width: 200px;
   left: 400px;
-  background-color: #3498db;
+  background-color: #808080;
+  color: #dadada;
 }
 
 /*  */
@@ -70,15 +77,24 @@ nav .start-contact, a:nth-child(3):hover~.animation {
 } */
 
 html {
-  font-family: 'Courier Prime', monospace;
-
+  font-family: 'Courier Prime', sans-serif;
+    height: 100%;
 }
+
+
 
 .colors {
   background-color: #404754;
-  padding: 5% 15% 30% 15%;
-  font-family: 'Courier Prime';
+  padding: 5% 20% 30% 20%;
+  font-family: 'Courier Prime', sans-serif;
   color: #F8FAFD;
+}
+
+.center {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 main
@@ -86,7 +102,7 @@ main
 
   background-color: #21252B;
   color: #21252B;
-  font-family: 'Courier Prime', monospace;
+  font-family: 'Courier Prime', sans-serif;
   /* padding-left: 20px; */
 }
 .yolo {
@@ -95,7 +111,7 @@ main
 }
 
 head {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Courier Prime', sans-serif;
   
 }
 
@@ -105,11 +121,11 @@ head {
 
 h1 {
   color: white;
-  font-family: 'Courier Prime', monospace;
+  font-family: 'Courier Prime', sans-serif;
 }
 h2 {
   color: white;
-  font-family: 'Courier Prime', monospace;
+  font-family: 'Courier Prime', sans-serif;
 }
 
 .picture {
@@ -119,8 +135,9 @@ h2 {
 
 body
 {
-  font-family: georgia;
+  font-family: 'Courier Prime', sans-serif;
   background-color: #21252B;
+  min-height: 100%;
 }
 
 /* submit1 {
@@ -174,7 +191,7 @@ footer
     padding-left: 20px;
     display: flex;
     align-items: center;
-    font-family: 'Courier Prime';
+    font-family: 'Courier Prime', sans-serif;
 }
 .bottom
 {
@@ -199,11 +216,12 @@ footer
 
 .textcolorita {
     color: white;
-    padding: 10% 20% 30% 20%;
-    background-image: url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    padding: 18% 20% 30% 20%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.75;
-    
+   
+    align-items: center;
 }
 
 
@@ -220,7 +238,7 @@ form.bar button {
   float: left;
   width: 20%;
   padding: 10px;
-  background: #2196F3;
+  background: #9a9d9e;
   color: white;
   font-size: 17px;
   border: 1px solid grey;
@@ -229,7 +247,8 @@ form.bar button {
 }
 
 form.bar button:hover {
-  background: #0b7dda;
+  background: #9a9d9e;
+  color: #9a9d9e;
 }
 
 /* Clear floats */
@@ -243,24 +262,36 @@ form.bar::after {
 
 } */
 
+.formtext {
+    text-align: center;
+    font-size: 25px;
+    opacity: 0.5;
+}
+
 .divider {
     width: 100%;
-    height: 10px;
+    height: 5px;
     background-color: #21252B;
 }
 
 .container--overall {
     margin-top: 50px;
     background-color: #404754;
-    padding: 20px 40px;
+    padding: 10px 40px;
+    border-radius: 8px;
 }
 
 .container-height {
-    height: 100%;
+    height: 60%;
+    border-radius: 8px;
 }
 
+.col {
+    border-radius: 8px !important;
+}
 .navBar-top-format{
     background-color: #21252B;
+    align-items: center;
     
 }
 
@@ -268,13 +299,18 @@ form.bar::after {
     vertical-align: middle;
     display: flex;
     align-items: center;
-    justify-content: left;
     float: left;
-    padding-left: 1%;
-    
-    
+    padding-left: 10px;
+    color: white;
+    font-family: 'Courier Prime', sans-serif;
+    font-size: 30px;
+    padding-top: 8px;
 }
 .item2-navBar{
-    justify-content: right;
     float: right;
 }
+
+.navbartext {
+    padding-left: 10px;
+}
+

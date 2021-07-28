@@ -157,14 +157,14 @@
 <div class="navBar-top-format">
     <div class="item1-navBar">
         <img src="static/images/stocks.jpg" height="40" width="45" />
-        <h2>Financial Sentiment</h2>
+        <div class="navbartext">Financial Sentiment Analyzer</div>
     </div>
     <div class="item2-navBar">
         <nav>
             <a class="horizontal-bar" href="{{url_for('index')}}">Home</a>
             <a class="horizontal-bar" href="{{url_for('get_about')}}">About</a>
             <a class="horizontal-bar" href="{{url_for('get_contact')}}">Contact</a>
-            <div class="animation start-contact"></div>
+            <div class="animation start-home"></div>
         </nav>
     </div>
 </div>
@@ -191,23 +191,6 @@
         <div>Bullish: {{total[0]}}</div>
         <div>Bearish: {{total[1]}}</div>
     </div>
-
-    <!-- <section class="pt-5">
-        <div class="container pt-5">
-            <div class="card border-0 rounded shadow-sm">
-                <div class="card-body card-body--overall p-5" style="background-color: #404754;">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <h1 class="fw-bold">Overall: {{total[2]}}</h1>
-                            <h2 style="color: whitesmoke">Bullish: {{total[0]}} </h2>
-                            <h2 style="color: whitesmoke">Bearish: {{total[1]}} </h2>
-                        </div>
-                        <div class="col-lg-6"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
 </body>
 

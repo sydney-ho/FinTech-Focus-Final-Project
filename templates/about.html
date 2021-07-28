@@ -13,14 +13,14 @@
 <div class="navBar-top-format">
     <div class="item1-navBar">
         <img src="static/images/stocks.jpg" height="40" width="45" />
-        <h2>Financial Sentiment</h2>
+        <div class="navbartext">Financial Sentiment Analyzer</div>
     </div>
     <div class="item2-navBar">
         <nav>
             <a class="horizontal-bar" href="{{url_for('index')}}">Home</a>
             <a class="horizontal-bar" href="{{url_for('get_about')}}">About</a>
             <a class="horizontal-bar" href="{{url_for('get_contact')}}">Contact</a>
-            <div class="animation start-about"></div>
+            <div class="animation start-home"></div>
         </nav>
     </div>
 </div>
@@ -28,7 +28,9 @@
 <body>
     
     <main class="colors">
-        <h1> What is Financial Sentiment? </h1>
+        <h1 class="center"> What is Financial Sentiment? </h1>
+        <img src="static/images/sentiment.png" class="center">
+        <br> 
         <section>
             The most common use of The Sentiment Analysis API in the financial sector will be the analysis of
             financial news, in particular to predicting the behaviour and possible trend of stock markets.
