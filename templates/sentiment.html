@@ -154,6 +154,21 @@
     </script>
 </head>
 
+<div class="navBar-top-format">
+    <div class="item1-navBar">
+        <img src="static/images/stocks.jpg" height="40" width="45" />
+        <h2>Financial Sentiment</h2>
+    </div>
+    <div class="item2-navBar">
+        <nav>
+            <a class="horizontal-bar" href="{{url_for('index')}}">Home</a>
+            <a class="horizontal-bar" href="{{url_for('get_about')}}">About</a>
+            <a class="horizontal-bar" href="{{url_for('get_contact')}}">Contact</a>
+            <div class="animation start-contact"></div>
+        </nav>
+    </div>
+</div>
+
 <body>
     <h1 style="text-align: center;">{{name}}</h1>
     <div class="container container-height">

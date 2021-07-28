@@ -10,26 +10,22 @@
     </style>
 </head>
 
+<div class="navBar-top-format">
+    <div class="item1-navBar">
+        <img src="static/images/stocks.jpg" height="40" width="45" />
+        <h2>Financial Sentiment</h2>
+    </div>
+    <div class="item2-navBar">
+        <nav>
+            <a class="horizontal-bar" href="{{url_for('index')}}">Home</a>
+            <a class="horizontal-bar" href="{{url_for('get_about')}}">About</a>
+            <a class="horizontal-bar" href="{{url_for('get_contact')}}">Contact</a>
+            <div class="animation start-contact"></div>
+        </nav>
+    </div>
+</div>
+
 <body>
-    <nav>
-        <br>
-        <div class="container navheader">
-            <div class="dropdown" class="picture">
-                <button class="btn btn-secondary dropdown-toggle" type="button" img="stocks.jpg"
-                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"> <a href="index.html"> <img
-                            src="static/images/stocks.jpg" height="70" width="75" /></a>
-
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="{{url_for('index')}}">Home</a></li>
-                    <li><a class="dropdown-item" href="{{url_for('get_about')}}">About</a></li>
-                    <li><a class="dropdown-item" href="{{url_for('get_contact')}}"> Contact Us </a></li>
-                </ul>
-
-            </div>
-            <div class="navtitle">Financial Sentiment Analyzer</div>
-        </div>
-    </nav>
     
     <main class="colors">
         <h4>
