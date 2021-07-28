@@ -14,46 +14,23 @@
     <nav>
         <br>
         <div class="container navheader">
-            <div class="row">
-                <div class="col">
-                    <div class="dropdown" class="picture">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" img="stocks.jpg"
-                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"> <a
-                                href="index.html"> <img src="static/images/stocks.jpg" height="70" width="75" /></a>
+            <div class="dropdown" class="picture">
+                <button class="btn btn-secondary dropdown-toggle" type="button" img="stocks.jpg"
+                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"> <a href="index.html"> <img
+                            src="static/images/stocks.jpg" height="70" width="75" /></a>
 
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="{{url_for('index')}}">Home</a></li>
-                            <li><a class="dropdown-item" href="{{url_for('get_about')}}">About</a></li>
-                            <li><a class="dropdown-item" href="{{url_for('get_contact')}}"> Contact Us </a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col">
-                    <h1> Financial </h1>
-                </div>
-                <div class="col">
-                    <h1> Sentiment </h1>
-                </div>
-                <div class="col">
-                    <h1> Analyzer </h1>
-                </div>
-                <div class="col">
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="{{url_for('index')}}">Home</a></li>
+                    <li><a class="dropdown-item" href="{{url_for('get_about')}}">About</a></li>
+                    <li><a class="dropdown-item" href="{{url_for('get_contact')}}"> Contact Us </a></li>
+                </ul>
 
-                </div>
-                <div class="col">
-
-                </div>
-
-                <div class="col">
-
-                </div>
             </div>
-
+            <div class="navtitle">Financial Sentiment Analyzer</div>
         </div>
-
-
     </nav>
+    
     <main class="colors">
         <h1> What is Financial Sentiment? </h1>
         <section>

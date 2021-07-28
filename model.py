@@ -40,5 +40,5 @@ def getLogo(query):
     response = requests.get(f'https://www.styvio.com/api/sentiment/{query}').json()
     return response['logoURL']
 
-def getDate(query):
-    response = requests.get(f'')
+# def getDate(query):
+#     response = requests.get(f'')
