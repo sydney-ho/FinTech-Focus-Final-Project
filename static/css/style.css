@@ -279,10 +279,11 @@ form.bar::after {
     background-color: #404754;
     padding: 10px 40px;
     border-radius: 8px;
+    align-items: center;
 }
 
 .container-height {
-    height: 60%;
+    height: 80%;
     border-radius: 8px;
 }
 
@@ -314,3 +315,17 @@ form.bar::after {
     padding-left: 10px;
 }
 
+.overall-box-format{
+    display: flex;
+
+}
+
+.overall-section-text{
+    color: white;
+    float: center;
+    align-items: center;
+}
+.row-box{
+    float: center;
+    align-items: center;
+}

@@ -6,7 +6,8 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="static/css/style.css?q={{ time }}">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
+    <div class = "round-edge">
+   <script type="text/javascript">
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawChart);
         var bullish = parseFloat('{{stock_twits[0]}}');
@@ -44,6 +45,9 @@
             chart.draw(data, options);
         }
     </script>
+    </div>
+     <div class = "round-edge">
+
     <script type="text/javascript">
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawChart);
@@ -83,6 +87,8 @@
             chart.draw(data, options);
         }
     </script>
+    </div>
+     <div class = "round-edge">
     <script type="text/javascript">
         google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawChart);
@@ -105,6 +111,7 @@
                     fontName: 'Sans-Serif',
                     fontSize: 16,
                 },
+     
                 pieHole: 0.4,
                 height: 500,
                 colors: ['#BFFCC6', '#FFF5BA', '#FFABAB'],
@@ -120,38 +127,7 @@
             chart.draw(data, options);
         }
     </script>
-    <script type="text/javascript">
-        google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawChart);
-        var totalbullish = parseFloat('{{total[0]}}');
-        var totalbearish = parseFloat('{{total[1]}}');
-        var totalneutral = parseFloat('{{100-total[0]-total[1]}}');
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Genre'],
-                ['', 60, 40, '']
-            ]);
-            var options = {
-                width: 600,
-                height: 400,
-                legend: { position: 'top', maxLines: 3 },
-                bar: { groupWidth: '75%' },
-                isStacked: true
-            };
-            var options_fullStacked = {
-                isStacked: 'percent',
-                height: 300,
-                legend: { position: 'top', maxLines: 3 },
-                hAxis: {
-                    minValue: 0,
-                    ticks: [0, .3, .6, .9, 1]
-                }
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('redditmarketchart'));
-            chart.draw(data, options);
-        }
-    </script>
+    </div>
 </head>
 
 <div class="navBar-top-format">
@@ -187,9 +163,65 @@
     <div class="divider"> </div>
 
     <div class="container container--overall">
-        <div>Overall: {{total[2]}}</div>
-        <div>Bullish: {{total[0]}}</div>
-        <div>Bearish: {{total[1]}}</div>
+        <div class="overall-box-format">
+            <div class="row">
+        
+                <div class="col">
+                    <div class = "overall-section-text">Overall: {{total[2]}}</div>
+
+                    <div class = "overall-section-text">Bullish: {{total[0]}}</div>
+
+                    <div class = "overall-section-text">Bearish: {{total[1]}}</div>
+                </div>
+                <div class="col">
+                    <script type="text/javascript">
+                        google.charts.load('current', { 'packages': ['bar'] });
+                        google.charts.setOnLoadCallback(drawChart);
+                        var totalbu = parseFloat('{{total[0]}}');
+                        var totalbe = parseFloat('{{total[1]}}');
+                        var totaln = parseFloat('{{100-total[0]-total[1]}}');
+                        function drawChart() {
+                            var data = google.visualization.arrayToDataTable([
+                                [' ', 'Bullish', 'Neutral', 'Bearish'],
+                                [' ', totalbu, totaln, totalbe, ],
+                            ]);
+                            var options_fullStacked = {
+                                bars: 'horizontal',
+                                chartArea: {
+                                    backgroundColor: '#404754'
+                                },
+                                backgroundColor: '#404754',
+                                isStacked: true,
+                                // isStacked: 'percent',
+                                // isStacked: 'relative',
+                                // isStacked: 'absolute',
+                                'height': 100,
+                                bar: { groupWidth: "95%" },
+
+                                legend: {
+                                    position: ' top', maxLines: 3, textStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
+                                    position: 'center',
+                                    alignment: 'center'
+                                },
+                                hAxis: {
+                                    titletextStyle: { color: '#ABB2BF', fontName: 'Sans-Serif' },
+                                    minValue: 0,
+                                    ticks: [0, .3, .6, .9, 1],
+                                    color: '#ABB2BF'
+                                },
+                                colors: ['gray']
+                            };
+                            var chart1 = new google.charts.Bar(document.getElementById('barchart_material'));
+
+                            chart1.draw(data, google.charts.Bar.convertOptions(options_fullStacked));
+                        }
+                    </script>
+                    <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
 </body>
