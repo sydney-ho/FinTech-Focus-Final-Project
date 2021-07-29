@@ -205,34 +205,40 @@
         </div>
     </div>
 
-    <script>
+<!-- <script>
 window.onload = function () {
-var ogPrices = parseFloat('{{price}}');
-var stockPrice = [];
-var stockChart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	theme: "dark",
-	title:{
-		text: "Stock Data"
-	},
-	data: [{        
-		type: "line",
-      	indexLabelFontSize: 16,
-		dataPoints : stockPrice
-	}]
-});
-function parseDataPoints () {
-        for (var i = 0; i <= ogPrices.length; i++)
-          stockPrice.push({y: ogPrices[i]});     
-     };
-parseDataPoints();
-stockChart.options.data[0].dataPoints = stockPrice;
-stockChart.render();
+var dataArray = '{{price}}';
+var dps = [];   //dataPoints. 
+   
+	 var chart = new CanvasJS.Chart("chartContainer",{
+      	title :{
+      		text: "Data Plotted from Array"
+      	},
+      	axisX: {						
+      		title: "Axis X Title"
+      	},
+      	axisY: {						
+      		title: "Units"
+      	},
+      	data: [{
+      		type: "line",
+      		dataPoints : dps
+      	}]
+      });
 
+
+     function parseDataPoints () {
+        for (var i = 0; i <= dataArray.length; i++)
+          dps.push({y: dataArray[i]});     
+     };
+
+parseDataPoints();
+     chart.options.data[0].dataPoints = dps;
+     chart.render();
 }
 </script>
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div> -->
 
     <div class="divider"> </div>
     <div class="divider"> </div>
