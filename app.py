@@ -18,13 +18,18 @@ USER = app.config['USER']
 app.config['MONGO_PWD'] = os.getenv('DBPWD')   
 PWD = app.config['MONGO_PWD']    
 # URI of database   
-# app.config['MONGO_URI'] = f"mongodb+srv://{USER}:{PWD}@cluster0.vmzkd.mongodb.net/{DBNAME}?retryWrites=true&w=majority"
 app.config['MONGO_URI'] = f"mongodb+srv://{USER}:{PWD}@cluster0.4hkah.mongodb.net/{DBNAME}?retryWrites=true&w=majority"
 
 is_prod = os.environ.get('IS_HEROKU', None)
-			if is_prod:
-    				key = os.environ.get("GIPHY_KEY")
-
+if is_prod:
+    app.config['MONGO_DBNAME'] = os.environ.get("DBNAME")
+    key_form = os.environ.get("DBNAME")
+    app.config['USER'] = os.environ.get("DBUSER")
+    key_form2 = os.environ.get("DBUSER")
+    app.config['MONGO_PWD'] = os.environ.get("DBPWD") 
+    key_form3 = os.environ.get("DBPWD")
+    app.config['MONGO_URI'] = f"mongodb+srv://{key_form}:{key_form2}@cluster0.4hkah.mongodb.net/{key_form3}?retryWrites=true&w=majority"
+  
 mongo = PyMongo(app)
 
 # -- Routes section --
