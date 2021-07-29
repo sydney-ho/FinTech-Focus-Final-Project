@@ -40,4 +40,6 @@ def getLogo(query):
     response = requests.get(f'https://www.styvio.com/api/sentiment/{query}').json()
     return response['logoURL']
 
-def getPrices
+def getPrices(query):
+    response = requests.get(f'https://www.styvio.com/api/{query}').json()
+    return response['dailyPrices']

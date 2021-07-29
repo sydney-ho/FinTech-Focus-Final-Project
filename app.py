@@ -2,7 +2,7 @@
 # -- Import section --
 from flask import Flask, render_template, request
 from datetime import datetime
-from model import getStockTwitsData, getRedditStockData, getRedditMarketData, getTotalData, getName, getLogo
+from model import getStockTwitsData, getRedditStockData, getRedditMarketData, getTotalData, getName, getLogo, getPrices
 import os
 
 # -- Initialization section --
@@ -31,5 +31,6 @@ def yoursentiment():
     reddit_market_sentiment = getRedditMarketData(userStockChoice)
     total_sentiment = getTotalData(userStockChoice)
     stock_logo = getLogo(userStockChoice)
+    stock_price = getPrices(userStockChoice)
     return render_template('sentiment.html', time = datetime.now(), stock_twits = stock_twits_sentiment, reddit_stock = reddit_stock_sentiment,
-    reddit_market = reddit_market_sentiment, total = total_sentiment, name = stock_name, logo = stock_logo)
+    reddit_market = reddit_market_sentiment, total = total_sentiment, name = stock_name, logo = stock_logo, price = stock_price)

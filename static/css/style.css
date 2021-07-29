@@ -13,6 +13,7 @@ nav {
   background-color: #21252B;
   border-radius: 8px;
   font-size: 0;
+  font-style: 'Courier Prime', sans-serif;
 }
 nav a {
   line-height: 50px;
@@ -26,6 +27,7 @@ nav a {
   text-align: center;
   color: white;
   cursor: pointer;
+  font-style: 'Courier Prime', sans-serif;
 }
 nav .animation {
   position: absolute;
@@ -110,7 +112,7 @@ main
   /* padding-right: 40px; */
 }
 
-head {
+.head {
   font-family: 'Courier Prime', sans-serif;
   
 }
@@ -140,9 +142,7 @@ body
   min-height: 100%;
 }
 
-/* submit1 {
-  text-align: center;
-} */
+
 
 footer
 {
@@ -150,34 +150,6 @@ footer
   background-image: linear-gradient(#21252B, #21252B);
 }
 
-
-
-
-
-
-/* .tr
-
-{
-  border-size: 1px;
-  border-type: double;
-  border-color: white;
-
-}
-.box	{
-		width: 216px;
-		height:200px;
-		float: left;
-
-
-		} */
-
-/* .container
-{
-	width:648px;
-
-	margin:0 auto;
-
-} */
 
 .navheader {
     margin-right: 0 !important;
@@ -199,19 +171,10 @@ footer
   padding-bottom: 30px;
   
 }
-/* 
-.table {
-  width:40%; 
-  margin-left:30%; 
-  margin-right:40%;
-  font-family: Comic Sans MS, Comic Sans, cursive;
-} */
+
 
 .bar {
   text-align: center;
-  /* position: absolute;
-     top: 350px;
-     left: 500px; */
 }
 
 .textcolorita {
@@ -305,31 +268,44 @@ form.bar::after {
     color: white;
     font-family: 'Courier Prime', sans-serif;
     font-size: 30px;
-    padding-top: 8px;
+    padding-top: 6px;
+    margin-top: 5px;
+    margin-left: 6px;
+    padding-bottom: 5px;
+    padding-right: 10px;
 }
 .item2-navBar{
     float: right;
+    font-family: 'Courier Prime', sans-serif;
 }
 
 .navbartext {
     padding-left: 10px;
+    font-size: 22px;
+    font-family: 'Courier Prime', sans-serif !important;
 }
 
 .overall-box-format{
     display: flex;
-
+    margin-top: 30px;
+    margin-left: 60px;
 }
 
 .overall-section-text{
     color: white;
     float: center;
     align-items: center;
+    
 }
 .row-box{
     float: center;
     align-items: center;
 }
-
-.sentiment-title{
-
+.horizontal-bar{
+    /* font-style: 'Courier Prime', sans-serif; */
+    font-size: 18px;
+    margin-top: 7px;
+}
+.formtext{
+    padding-bottom: 8px;
 }
