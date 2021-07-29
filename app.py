@@ -21,6 +21,10 @@ PWD = app.config['MONGO_PWD']
 # app.config['MONGO_URI'] = f"mongodb+srv://{USER}:{PWD}@cluster0.vmzkd.mongodb.net/{DBNAME}?retryWrites=true&w=majority"
 app.config['MONGO_URI'] = f"mongodb+srv://{USER}:{PWD}@cluster0.4hkah.mongodb.net/{DBNAME}?retryWrites=true&w=majority"
 
+is_prod = os.environ.get('IS_HEROKU', None)
+			if is_prod:
+    				key = os.environ.get("GIPHY_KEY")
+
 mongo = PyMongo(app)
 
 # -- Routes section --
@@ -35,7 +39,6 @@ def get_about():
 
 @app.route('/contact')
 def get_contact():
-    
     return render_template('contact.html', title="Contact Us")
 
 @app.route('/yoursentiment', methods=['GET','POST'])
