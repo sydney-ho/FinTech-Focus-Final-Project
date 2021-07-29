@@ -309,3 +309,23 @@ form.bar::after {
 .formtext{
     padding-bottom: 8px;
 }
+.container--piechart{
+    margin-top: 50px;
+    background-color: #404754;
+    padding: 10px 70px;
+    border-radius: 8px;
+    align-items: center;
+    padding-bottom: 200px;
+   
+}
+.container--stock{
+    margin-top: 50px;
+    background-color: #404754;
+    /* padding: 10px 70px; */
+    border-radius: 8px;
+    align-items: center;
+    padding-right: 80px;
+    padding-bottom: 30px;
+    /* padding-bottom: 200px; */
+
+}
